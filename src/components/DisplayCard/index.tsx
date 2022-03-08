@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext}  from "react";
 
 import { 
   CardDisplay,
@@ -8,6 +8,8 @@ import {
 import { TitleCard } from '../../components/TitleCard'
 import { TextCard } from "../TextCard";
 import Button from "../Button";
+
+import { CartContext } from '../../contexts/CartContext'
 
 interface Product {
   id: string,
@@ -24,6 +26,8 @@ interface Products {
 
 
 export default function DisplayCard(product: Products) {
+  const { cart, handlerAddCart, handlerRemoveCart } = useContext(CartContext)
+
   return (
     <CardDisplay key={product.product.id}>
       <img src={product.product.image} alt="" />
@@ -38,7 +42,7 @@ export default function DisplayCard(product: Products) {
         {product.product.title}
       </TitleCard>
       <TextCard>{product.product.description}</TextCard>
-      <Button>Comprar</Button>
+      <Button onClick={() => handlerAddCart(product.product.id)} >Comprar</Button>
     </CardDisplay>
   )
 } 

@@ -24,7 +24,6 @@ const Button: React.FC<ButtonProps> = ({
   >
     {children}
   </Container>
-    
 )
 
 export default Button;
