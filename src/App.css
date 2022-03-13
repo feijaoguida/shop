@@ -1,10 +1,4 @@
-:root {
-  --primary-color: #34CB79
-  --title-color: #322153;
-  --text-color: #6c6c80;
-  --sizaClaro-color: #f0f0f5
-  --color-branco: #FFF
-}
+
 
 * {
   margin: 0;
@@ -13,9 +7,9 @@
 }
 
 body {
-  background: var(--sizaClaro-color);
+  background: #f0f0f5;
   -webkit-font-smoothing: antialiased;
-  color: var(--text-color)
+  color: #6c6c80
 }
 
 body, input, button {
@@ -23,6 +17,6 @@ body, input, button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--title-color);
+  color: #322153;
   font-family: Ubuntu;
 }

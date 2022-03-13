@@ -11,8 +11,6 @@ type CartProps = {
   quantity: number;
 } 
 
-const image = "https://i0.wp.com/umode.com.br/wp-content/uploads/2020/08/o_que_e_como_criar_colecao_moda_unsplash.jpg?fit=1200%2C800&ssl=1"
-
 function ItemCart({product, quantity}: CartProps) {
   return (
     <Container>
