@@ -37,14 +37,11 @@ export default function Shop() {
   }, []);
 
   function filtrarCatetorias(category: string) {
-
     if (category === 'all') {
       setProducts(allProducts)
     } else {
       setProducts(allProducts.filter(p => p.category === category))
     }
-    
-
   }
 
 

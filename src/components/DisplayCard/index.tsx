@@ -11,22 +11,10 @@ import Button from "../Button";
 
 import { CartContext } from '../../contexts/CartContext'
 
-interface Product {
-  id: string,
-  image: string,
-  rating: { rate: string },
-  price: string,
-  title: string,
-  description: string
-}
-
-interface Products {
-  product: Product
-}
-
+import { Products } from '../../interfaces/products'
 
 export default function DisplayCard(product: Products) {
-  const { cart, handlerAddCart, handlerRemoveCart } = useContext(CartContext)
+  const { handlerAddCart } = useContext(CartContext)
 
   return (
     <CardDisplay key={product.product.id}>
@@ -42,7 +30,7 @@ export default function DisplayCard(product: Products) {
         {product.product.title}
       </TitleCard>
       <TextCard>{product.product.description}</TextCard>
-      <Button onClick={() => handlerAddCart(product.product.id)} >Comprar</Button>
+      <Button onClick={() => handlerAddCart(product.product)} >Comprar</Button>
     </CardDisplay>
   )
 } 

@@ -60,3 +60,15 @@ export const Linked = styled(Link)`
   font-size: 1.2em;
   margin: 0 5px;
 `;
+
+export const CartIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+`;

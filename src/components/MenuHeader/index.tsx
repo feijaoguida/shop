@@ -1,23 +1,31 @@
-import React from "react";
+import React, {useContext} from "react";
 
-import * as s from "./styles";
+import { Container, Top, Logo, Menu, Linked, CartIcon} from "./styles";
+
+import { CartContext } from '../../contexts/CartContext'
 
 import logo from '../../assets/logo.png'
 
 function MenuHeader() {
+
+  const { totalCart } = useContext(CartContext)
+
   return (
-    <s.Container>
-      <s.Top>
-        <s.Logo>
+    <Container>
+      <Top>
+        <Logo>
           <img src={logo} alt="Logo Liven" />
-        </s.Logo>
-        <s.Menu>
-          <s.Linked to="/">Home</s.Linked>
-          <s.Linked to="/shop">Loja</s.Linked>
-          <s.Linked to="/about">Sobre</s.Linked>
-        </s.Menu>
-      </s.Top>
-    </s.Container>
+        </Logo>
+        <Menu>
+          <Linked to="/">Home</Linked>
+          <Linked to="/shop">Loja</Linked>
+          <Linked to="/about">Sobre</Linked>
+        </Menu>
+        <CartIcon>
+          <Linked to="/cart">Cart = {totalCart}</Linked>
+        </CartIcon>
+      </Top>
+    </Container>
   )
 }
 
